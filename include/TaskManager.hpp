@@ -1,5 +1,5 @@
-#ifndef TASKMANAGEMENT_HPP
-#define TASKMANAGEMENT_HPP
+#ifndef TASKMANAGER_HPP
+#define TASKMANAGER_HPP
 
 #include <vector>
 
@@ -23,4 +23,4 @@ class TaskManager {
 		void displayTasks() const; //Displays all tasks for the logged-in user
 };
 
-#endif /*TASKMANAGEMENT_HPP*/
+#endif /*TASKMANAGER_HPP*/
