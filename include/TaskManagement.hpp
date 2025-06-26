@@ -1,3 +1,8 @@
+#ifndef TASKMANAGEMENT_HPP
+#define TASKMANAGEMENT_HPP
+
+#include <vector>
+
 class TaskManager {
 	private:
 		std::vector<User*> users; //List of all users
@@ -17,3 +22,5 @@ class TaskManager {
 		void editTask(const std::string& title, const Task& updatedTask); //Modifies a task for the logged-in user.
 		void displayTasks() const; //Displays all tasks for the logged-in user
 };
+
+#endif /*TASKMANAGEMENT_HPP*/
