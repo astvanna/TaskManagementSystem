@@ -1,7 +1,10 @@
 #ifndef TASKMANAGER_HPP
 #define TASKMANAGER_HPP
 
+#include "User.hpp"
+#include "Task.hpp"
 #include <vector>
+#include <string>
 
 class TaskManager {
 	private:
