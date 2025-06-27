@@ -68,6 +68,7 @@ bool User::deleteTask(const std::string& taskId) {
 	for (size_t i = 0; i < m_tasks.size(); ++i) {
 		if (m_tasks[i]->getTitle() == taskId) {
 			delete m_tasks[i];
+			m_tasks[i] = nullptr;
 			m_tasks.erase(m_tasks.begin() + i);
 			return true;
 		}
@@ -76,6 +77,9 @@ bool User::deleteTask(const std::string& taskId) {
 }
 
 bool User::editTask(const std::string& taskId, const Task& updatedTask) {
+	if (taskId.empty()) {
+		return false;
+	}
 	for (size_t i = 0; i < m_tasks.size(); ++i) {
 		if (m_tasks[i]->getTitle() == taskId) {
 			*m_tasks[i] = updatedTask;

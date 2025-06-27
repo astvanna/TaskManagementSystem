@@ -74,19 +74,13 @@ void Task::setCategory(const std::string& category) {
 }
 
 void Task::setPriority(int priority) {
-	switch(priority) {
-	case 1:
-		m_priority = Priority::LOW;
-		break;
-	case 2:
-		m_priority = Priority::MEDIUM;
-		break;
-	case 3:
-		m_priority = Priority::HIGH;
-		break;
-	default:
-		m_priority = Priority::LOW;
-	}
+	 if (priority <= 1) {
+		 m_priority = Priority::LOW;
+	 } else if (priority >= 3) {
+		 m_priority = Priority::HIGH;
+	 } else {
+		 m_priority = Priority::MEDIUM;
+	 }
 }
 
 void Task::setCompleted(bool completed) {
