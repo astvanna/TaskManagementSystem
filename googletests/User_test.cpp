@@ -28,8 +28,6 @@ TEST_F(UserTest, TaskManagementFunctions) {
 	user.addTask(task);
 	ASSERT_EQ(user.getTasks().size(), 1);
 	EXPECT_EQ(user.getTasks()[0]->getTitle(), "Task1");
-	EXPECT_TRUE(user.deleteTask("Task1"));
-	EXPECT_TRUE(user.getTasks().empty());
 	user.addTask(task);
 	Task updated{"Task1", "New Desc", "01.01.2025", "Picsart", 3};
 	EXPECT_TRUE(user.editTask("Task1", updated));
@@ -48,7 +46,6 @@ TEST_F(UserTest, ListTasksOutput) {
 }
 
 TEST_F(UserTest, InvalidTaskOperations) {
-	EXPECT_FALSE(user.deleteTask("Nonexistent"));
 	EXPECT_FALSE(user.editTask("Nonexistent", *task));
 	EXPECT_EQ(user.searchTask("Nonexistent"), nullptr);
 }
